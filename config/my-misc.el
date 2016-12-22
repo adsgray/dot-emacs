@@ -13,5 +13,7 @@
 
 ;; https://www.reddit.com/r/emacs/comments/30g5wo/the_kill_ring_and_the_clipboard/
 (setq save-interprogram-paste-before-kill t)
+(setq visible-bell 1)
+(setq ring-bell-function (lambda () (message "*beep*")))
 
 (provide 'my-misc)
