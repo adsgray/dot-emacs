@@ -38,6 +38,7 @@
 (require 'my-shell)
 (require 'my-eww)
 (require 'my-prog)
+(require 'my-calendar)
 (require 'my-misc)
 
 ;; other
