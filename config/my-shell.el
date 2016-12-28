@@ -1,6 +1,10 @@
 
 (require 'eshell)
 (defalias 'vi "find-file $1") ;; lol
+
+(setenv "HOME" "/Users/andrew")
+(setenv "GOPATH" (concat (getenv "HOME") "/" "gocode"))
+
 ;; exec-path stuff
 (exec-path-from-shell-initialize)
 
