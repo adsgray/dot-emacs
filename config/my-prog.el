@@ -7,6 +7,7 @@
 
 (add-hook 'go-mode-hook (progn
 			  (setq compile-command "go build")
+			  (add-hook 'before-save-hook 'gofmt-before-save)
 			  ))
 
 (provide 'my-prog)
