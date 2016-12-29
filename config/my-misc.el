@@ -16,4 +16,7 @@
 (setq visible-bell 1)
 (setq ring-bell-function (lambda () (message "*beep*")))
 
+(require 'golden-ratio)
+(golden-ratio-mode 1)
+
 (provide 'my-misc)
