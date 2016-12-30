@@ -18,6 +18,9 @@
 (global-set-key (kbd "C-, f") 'helm-semantic-or-imenu)
 (global-set-key (kbd "C-, o") 'helm-occur)
 (global-set-key (kbd "C-, m") 'helm-mark-ring)
+(global-set-key (kbd "C-, s") 'helm-swoop)
+;; C-, c and C-, r are bound in 'my-prog'
+
 (global-set-key (kbd "C-=") 'er/expand-region)
 ; what about er/contract-region
 
