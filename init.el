@@ -9,7 +9,7 @@
  '(helm-mode t)
  '(package-selected-packages
    (quote
-    (dired+ wgrep company-php go-complete neotree golden-ratio twittering-mode elfeed-org elfeed evil-leader ssh elisp-slime-nav darkokai-theme pacmacs sauron avy-flycheck evil dumb-jump helm-company volatile-highlights wrap-region js2-mode expand-region tea-time auto-highlight-symbol rainbow-delimiters ace-window use-package rainbow-mode flycheck helm-swoop w3m groovy-mode magit nyan-mode helm-projectile projectile helm php-mode git company-go company exec-path-from-shell go-autocomplete whitespace-cleanup-mode ## jabber w3 yaml-mode scala-mode go-mode markdown-mode))))
+    (wgrep-helm dired+ wgrep company-php go-complete neotree golden-ratio twittering-mode elfeed-org elfeed evil-leader ssh elisp-slime-nav darkokai-theme pacmacs sauron avy-flycheck evil dumb-jump helm-company volatile-highlights wrap-region js2-mode expand-region tea-time auto-highlight-symbol rainbow-delimiters ace-window use-package rainbow-mode flycheck helm-swoop w3m groovy-mode magit nyan-mode helm-projectile projectile helm php-mode git company-go company exec-path-from-shell go-autocomplete whitespace-cleanup-mode ## jabber w3 yaml-mode scala-mode go-mode markdown-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
