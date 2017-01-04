@@ -6,7 +6,16 @@
 
 ;;(define-key evil-normal-state-map ":q" 'kill-buffer)
 
+;; find these mappings in: https://github.com/emacsmirror/evil/blob/master/evil-maps.el
 (evil-ex-define-cmd "quit" 'kill-this-buffer)
+
+(defun save-and-kill-this-buffer ()
+  "Save the current buffer, then kill it."
+  (interactive)
+  (save-buffer)
+  (kill-this-buffer))
+
+(define-key evil-normal-state-map "ZZ" 'save-and-kill-this-buffer)
 
 ;; for neo-tree
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
