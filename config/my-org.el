@@ -11,5 +11,8 @@
 ;; for org-capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; if this is true, the markdown export will have a bunch of HTML crap in it.
+(setq org-export-with-toc nil)
+
 
 (provide 'my-org)
