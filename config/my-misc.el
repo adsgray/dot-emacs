@@ -27,4 +27,10 @@
            args)))
 (advice-add 'message :around #'timestamp-message)
 
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c C-SPC" ) 'ace-jump-mode)
+
+(define-key global-map (kbd "C-c g") 'magit-status)
+;; require-final-newline
+
 (provide 'my-misc)

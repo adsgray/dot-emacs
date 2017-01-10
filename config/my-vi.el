@@ -17,6 +17,9 @@
 
 (define-key evil-normal-state-map "ZZ" 'save-and-kill-this-buffer)
 
+;; "leader" is ctrl x
+(define-key evil-normal-state-map "," ctl-x-map)
+
 ;; for neo-tree
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
