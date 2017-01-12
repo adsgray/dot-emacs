@@ -25,6 +25,7 @@
 
 (setenv "HOME" "/Users/andrew")
 (setenv "GOPATH" (concat (getenv "HOME") "/" "gocode"))
+(setenv "GOBIN" (concat (getenv "GOPATH") "/" "bin"))
 
 ;; exec-path stuff
 (exec-path-from-shell-initialize)

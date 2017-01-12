@@ -16,8 +16,8 @@
 (setq visible-bell 1)
 (setq ring-bell-function (lambda () (message "*beep*")))
 
-;;(require 'golden-ratio)
-;;(golden-ratio-mode 1)
+(require 'golden-ratio)
+(golden-ratio-mode 1)
 
 ;; timestamp messages. from: https://github.com/nivekuil/.emacs.d/blob/master/emacs-init.org
 (defun timestamp-message (orig-fun format-string &rest args)
@@ -32,5 +32,28 @@
 
 (define-key global-map (kbd "C-c g") 'magit-status)
 ;; require-final-newline
+
+;; function to open wttrin with first city on list
+;; http://pragmaticemacs.com/emacs/weather-in-emacs/
+(require 'wttrin)
+(setq wttrin-default-cities '("Vancouver,BC,Canada" "Nelson,BC,Canada" "Kingston,ON,Canada"))
+(defun weather ()
+    "Open `wttrin' without prompting, using first city in `wttrin-default-cities'"
+    (interactive)
+    ;; save window arrangement to register
+    ;(window-configuration-to-register :pre-wttrin)
+    ;(delete-other-windows)
+    ;; save frame setup
+    ;(save-frame-config)
+    ;(set-frame-width (selected-frame) 130)
+    ;(set-frame-height (selected-frame) 48)
+    ;; call wttrin
+    (wttrin-query (car wttrin-default-cities))
+    )
+
+;; elfeed
+;(defun my-elfeed-mode ()
+  ;"Stuff to run when entering an elfeed mode."
+  ;(add-hook 'elfeed-mode))
 
 (provide 'my-misc)
