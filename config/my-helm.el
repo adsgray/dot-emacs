@@ -14,7 +14,9 @@
 (setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
 
 ;; yep, taking Ctrl-P
-(global-set-key (kbd "C-p") 'helm-projectile)
+;; nope
+
+;(global-set-key (kbd "C-p") 'helm-projectile)
 (global-set-key (kbd "C-, f") 'helm-semantic-or-imenu)
 (global-set-key (kbd "C-, o") 'helm-occur)
 (global-set-key (kbd "C-, m") 'helm-mark-ring)
