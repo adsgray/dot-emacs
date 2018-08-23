@@ -1,6 +1,7 @@
 
 (require 'eshell)
 (defalias 'vi "find-file $1") ;; lol
+(defalias 'fg "previous-buffer")
 
 ;alias javagrep='find .-type f  -name \*java|xargs grep -ni '
 ;alias phpgrep='find . -type f -name \*php|xargs grep -ni '
@@ -23,9 +24,12 @@
 
 (setenv "JAVA_TOOL_OPTIONS" "-Dfile.encoding=UTF8")
 
-(setenv "HOME" "/Users/andrew")
+(setenv "HOME" "/Users/andrew.gray")
 (setenv "GOPATH" (concat (getenv "HOME") "/" "gocode"))
 (setenv "GOBIN" (concat (getenv "GOPATH") "/" "bin"))
+
+(setenv "ANSIBLE_TRANSPORT" "ssh")
+(setenv "ANSIBLE_SSH_ARGS" "-o ControlMaster=auto -o ControlPersist=60s -o ControlPath=/tmp/ansible-ssh-%h-%p-%r")
 
 ;; exec-path stuff
 (exec-path-from-shell-initialize)
@@ -40,5 +44,19 @@
 ;export HOMEBREW_REPOSITORY="/usr/local"
 ;export HOMEBREW_LIBRARY="/usr/local"
 ;export HOMEBREW_CELLAR="/usr/local/Cellar"
+
+(defun start-shells ()
+  "Start the shells I always start."
+  (interactive)
+  (eshell "*eshell-emacsd")
+  (eshell "*eshell-journal")
+  (eshell "*eshell-dashboard")
+  )
+
+;; for completions list in shell
+(add-hook
+ 'eshell-mode-hook
+ (lambda ()
+   (setq-local pcomplete-cycle-completions nil)))
 
 (provide 'my-shell)

@@ -19,6 +19,15 @@
 (require 'golden-ratio)
 (golden-ratio-mode 1)
 
+;; https://tuhdo.github.io/helm-intro.html
+;; prevent golden-ration from interfering with helm
+(defun pl/helm-alive-p ()
+  (if (boundp 'helm-alive-p)
+      (symbol-value 'helm-alive-p)))
+
+;; do this for minimap too?
+(add-to-list 'golden-ratio-inhibit-functions 'pl/helm-alive-p)
+
 ;; timestamp messages. from: https://github.com/nivekuil/.emacs.d/blob/master/emacs-init.org
 (defun timestamp-message (orig-fun format-string &rest args)
   (when (or (> (length format-string) 0) args)
@@ -38,22 +47,69 @@
 (require 'wttrin)
 (setq wttrin-default-cities '("Vancouver,BC,Canada" "Nelson,BC,Canada" "Kingston,ON,Canada"))
 (defun weather ()
-    "Open `wttrin' without prompting, using first city in `wttrin-default-cities'"
-    (interactive)
-    ;; save window arrangement to register
-    ;(window-configuration-to-register :pre-wttrin)
-    ;(delete-other-windows)
-    ;; save frame setup
-    ;(save-frame-config)
-    ;(set-frame-width (selected-frame) 130)
-    ;(set-frame-height (selected-frame) 48)
-    ;; call wttrin
-    (wttrin-query (car wttrin-default-cities))
-    )
+  "Open `wttrin' without prompting, using first city in `wttrin-default-cities'"
+  (interactive)
+  ;; save window arrangement to register
+                                        ;(window-configuration-to-register :pre-wttrin)
+                                        ;(delete-other-windows)
+  ;; save frame setup
+                                        ;(save-frame-config)
+                                        ;(set-frame-width (selected-frame) 130)
+                                        ;(set-frame-height (selected-frame) 48)
+  ;; call wttrin
+  (wttrin-query (car wttrin-default-cities))
+  )
 
 ;; elfeed
-;(defun my-elfeed-mode ()
-  ;"Stuff to run when entering an elfeed mode."
-  ;(add-hook 'elfeed-mode))
+                                        ;(defun my-elfeed-mode ()
+                                        ;"Stuff to run when entering an elfeed mode."
+                                        ;(add-hook 'elfeed-mode))
+
+
+
+(defun tmp/copy-whole-buffer ()
+  "Mark and copy the whole buffer into the kill ring."
+  (interactive)
+  (copy-region-as-kill (point-min) (point-max))
+  (message "copied buffer to kill-ring")
+  )
+(global-set-key (kbd "C-x c") 'tmp/copy-whole-buffer)
+
+(defun tmp/mkblogfile (slug)
+  "Do mkdir -p YYYY/MM and create file DD-SLUG.org and open it."
+  (interactive "sslug: ")
+  (cd "~/code/microblog/posts")
+  (let* ((bdir (format-time-string "%Y/%m"))
+         (day (format-time-string "%d"))
+         (bfile (concat day "-" slug ".org"))
+         )
+    ;; same as mkdir -p bdir
+    (mkdir bdir t)
+    (cd bdir)
+    (find-file bfile)
+    )
+  )
+
+
+;; http://stackoverflow.com/questions/23378271/how-do-i-display-ansi-color-codes-in-emacs-for-any-mode
+(require 'ansi-color)
+
+(defun ansi-colorize-current-buffer ()
+  "Colorize ansi escape sequences in the current buffer."
+  (interactive)
+  (ansi-color-apply-on-region (point-min) (point-max)))
+
+
+;; http://emacs.stackexchange.com/questions/3844/good-methods-for-setting-up-alarms-audio-visual-triggered-by-org-mode-events
+;;(setq appt-disp-window-function 'my-appt-display)
 
 (provide 'my-misc)
+
+(defun tmp/indent-and-untabify-buffer ()
+  "Mark and copy the whole buffer into the kill ring."
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)
+    (untabify (point-min) (point-max) nil)
+    )
+  )

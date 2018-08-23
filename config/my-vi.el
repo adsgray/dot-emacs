@@ -26,4 +26,22 @@
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
+
+;(let ((no-evil-modes '(elfeed-search elfeed-show)))
+;  (defun maybe-turn-off-evil-mode ()
+;    "If major mode is in the list, turn off evil mode."
+;    (if (member (major-mode) no-evil-modes))
+;    )
+;  (add-hook )
+;
+;  )
+
+;; exclude some modes
+;(eval-after-load 'evil-core
+;  '(progn
+;     (evil-set-initial-state 'elfeed-search 'emacs)
+;     (evil-set-initial-state 'elfeed-show 'emacs)
+;    )
+;  )
+
 (provide 'my-vi)
