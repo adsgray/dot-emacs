@@ -1,0 +1,2 @@
+alias fg previous-buffer
+alias vi find-file $1
