@@ -42,6 +42,8 @@
 (define-key global-map (kbd "C-c g") 'magit-status)
 ;; require-final-newline
 
+(define-key global-map (kbd "C-c p f") 'projectile-find-file)
+
 ;; function to open wttrin with first city on list
 ;; http://pragmaticemacs.com/emacs/weather-in-emacs/
 (require 'wttrin)

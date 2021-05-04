@@ -24,7 +24,7 @@
 
 (setenv "JAVA_TOOL_OPTIONS" "-Dfile.encoding=UTF8")
 
-(setenv "HOME" "/Users/andrew.gray")
+(setenv "HOME" "/home/adsgray")
 (setenv "GOPATH" (concat (getenv "HOME") "/" "gocode"))
 (setenv "GOBIN" (concat (getenv "GOPATH") "/" "bin"))
 

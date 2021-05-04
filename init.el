@@ -6,6 +6,7 @@
  '(auto-image-file-mode t)
  '(circe-default-nick "uhandrew")
  '(circe-default-realname "andrew")
+ '(create-lockfiles nil)
  '(custom-safe-themes
    (quote
     ("70403e220d6d7100bae7775b3334eddeb340ba9c37f4b39c189c2c29d458543b" default)))
@@ -23,8 +24,11 @@
  '(gnus-summary-line-format "%D%U%R%I%(%[%4L: %-23,23f%]%) %s
 ")
  '(helm-mode t)
+ '(indent-tabs-mode nil)
  '(line-spacing 0.05)
  '(mastodon-instance-url "https://mastodon.cloud")
+ '(menu-bar-mode nil)
+ '(minimap-width-fraction 0.1)
  '(mouse-drag-copy-region t)
  '(nil nil t)
  '(org-agenda-files
@@ -65,15 +69,17 @@
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (terraform-mode atomic-chrome mastodon pomodoro ansi sql-indent format-sql dockerfile-mode sbt-mode gotest socyl docker svg paredit pdf-tools wttrin weather forecast slack ace-jump-mode ack wgrep-helm dired+ wgrep company-php go-complete neotree golden-ratio twittering-mode elfeed-org elfeed ssh elisp-slime-nav darkokai-theme pacmacs sauron avy-flycheck evil dumb-jump helm-company volatile-highlights wrap-region js2-mode expand-region tea-time auto-highlight-symbol rainbow-delimiters ace-window use-package rainbow-mode flycheck helm-swoop w3m groovy-mode magit nyan-mode helm-projectile projectile helm php-mode git company-go company exec-path-from-shell go-autocomplete whitespace-cleanup-mode jabber w3 yaml-mode scala-mode go-mode markdown-mode)))
+    (markdown-mode+ disk-usage rjsx-mode minimap web-mode terraform-mode atomic-chrome mastodon pomodoro ansi sql-indent format-sql dockerfile-mode sbt-mode gotest socyl docker svg paredit pdf-tools wttrin weather forecast slack ace-jump-mode ack wgrep-helm dired+ wgrep company-php go-complete neotree golden-ratio twittering-mode elfeed-org elfeed ssh elisp-slime-nav darkokai-theme pacmacs sauron avy-flycheck evil dumb-jump helm-company volatile-highlights wrap-region js2-mode expand-region tea-time auto-highlight-symbol rainbow-delimiters ace-window use-package rainbow-mode flycheck helm-swoop w3m groovy-mode magit nyan-mode helm-projectile projectile helm php-mode git company-go company exec-path-from-shell go-autocomplete whitespace-cleanup-mode jabber w3 yaml-mode scala-mode go-mode markdown-mode)))
  '(remember-data-file "~/.emacs.d/notes.org")
+ '(scroll-bar-mode nil)
  '(select-enable-clipboard t)
  '(select-enable-primary t)
  '(shr-blocked-images ".*svg$")
  '(shr-image-animate t)
  '(shr-use-fonts nil)
  '(shr-width 75)
- '(sql-port 3333))
+ '(sql-port 3333)
+ '(tool-bar-mode nil))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
@@ -112,3 +118,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(elfeed-search-title-face ((t (:foreground "gray69")))))
+
+;; https://www.reddit.com/r/emacs/comments/cdei4p/failed_to_download_gnu_archive_bad_request/
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
