@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-image-file-mode t)
+ '(calendar-week-start-day 1)
  '(circe-default-nick "uhandrew")
  '(circe-default-realname "andrew")
  '(create-lockfiles nil)
@@ -69,7 +70,7 @@
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (markdown-mode+ disk-usage rjsx-mode minimap web-mode terraform-mode atomic-chrome mastodon pomodoro ansi sql-indent format-sql dockerfile-mode sbt-mode gotest socyl docker svg paredit pdf-tools wttrin weather forecast slack ace-jump-mode ack wgrep-helm dired+ wgrep company-php go-complete neotree golden-ratio twittering-mode elfeed-org elfeed ssh elisp-slime-nav darkokai-theme pacmacs sauron avy-flycheck evil dumb-jump helm-company volatile-highlights wrap-region js2-mode expand-region tea-time auto-highlight-symbol rainbow-delimiters ace-window use-package rainbow-mode flycheck helm-swoop w3m groovy-mode magit nyan-mode helm-projectile projectile helm php-mode git company-go company exec-path-from-shell go-autocomplete whitespace-cleanup-mode jabber w3 yaml-mode scala-mode go-mode markdown-mode)))
+    (haskell-mode lsp-metals lsp-mode emojify markdown-mode+ disk-usage rjsx-mode minimap web-mode terraform-mode atomic-chrome mastodon pomodoro ansi sql-indent format-sql dockerfile-mode sbt-mode gotest socyl docker svg paredit pdf-tools wttrin weather forecast slack ace-jump-mode ack wgrep-helm dired+ wgrep company-php go-complete neotree golden-ratio twittering-mode elfeed-org elfeed ssh elisp-slime-nav darkokai-theme pacmacs sauron avy-flycheck evil dumb-jump helm-company volatile-highlights wrap-region js2-mode expand-region tea-time auto-highlight-symbol rainbow-delimiters ace-window use-package rainbow-mode flycheck helm-swoop w3m groovy-mode magit nyan-mode helm-projectile projectile helm php-mode git company-go company exec-path-from-shell go-autocomplete whitespace-cleanup-mode jabber w3 yaml-mode scala-mode go-mode markdown-mode)))
  '(remember-data-file "~/.emacs.d/notes.org")
  '(scroll-bar-mode nil)
  '(select-enable-clipboard t)
